@@ -11,7 +11,7 @@ Use specific AWS CLI profiles with `--profile`.
 
 🖥️ **EC2 Checks**  
 - Detect instances that do **not have IMDSv2** enabled.  
-- Scan EC2 **UserData** scripts for hardcoded secrets *(manual review required)*.
+- Scan EC2 **UserData** for hardcoded secrets *(manual review required)*.
 
 📦 **S3 Bucket Security**  
 - Check for **versioning** and **logging**.  
