@@ -1,36 +1,50 @@
 # 🛡️ AWS Security Audit Toolkit (`aws-v7.sh`)
 
-A comprehensive and interactive Bash script to perform AWS security posture assessments. Designed to help security engineers and cloud practitioners identify misconfigurations and enforce AWS security best practices.
+A comprehensive and interactive Bash script to perform AWS security posture assessments. Designed to help security engineers and cloud practitioners identify misconfigurations.
 
 ---
 
 ## ✨ Features
 
-- 🔐 **AWS Profile Support**: Use specific AWS CLI profiles.
-- 🖥️ **EC2 Checks**:
-  - Detect instances without IMDSv2.
-  - Scan EC2 UserData for hardcoded secrets *(manual review)*.
-- 📦 **S3 Bucket Security**:
-  - Check for versioning, logging, and HTTPS-only policies.
-- 👤 **IAM Audits**:
-  - Identify privilege escalation opportunities *(manual review)*.
-  - Detect `iam:PassRole` or `sts:AssumeRole` with `*` resource.
-  - Audit access key rotation and usage.
-- 🔑 **KMS & Secrets Manager**:
-  - Validate key rotation for KMS and Secrets Manager.
-- 🔍 **CloudTrail**:
-  - Ensure trails are encrypted with KMS.
-- ⚠️ **Lambda Analysis**:
-  - Review environment variables for secrets *(manual review)*.
-- 🔥 **Security Groups**:
-  - Flag open ingress/egress (0.0.0.0/0 or ::/0).
-  - Detect unused security groups.
+🔐 **AWS Profile Support**  
+Use specific AWS CLI profiles with `--profile`.
+
+🖥️ **EC2 Checks**  
+- Detect instances that do **not have IMDSv2** enabled.  
+- Scan EC2 **UserData** scripts for hardcoded secrets *(manual review required)*.
+
+📦 **S3 Bucket Security**  
+- Check for **versioning** and **logging**.  
+- Verify **secure transport (HTTPS-only)** is enforced.
+
+👤 **IAM Audits**  
+- Identify **privilege escalation** paths *(manual review required)*.  
+- Detect overly permissive use of `iam:PassRole` and `sts:AssumeRole`.  
+- Check for **unused IAM keys** and **keys not rotated** in the last 365 days.
+
+🔑 **KMS & Secrets Manager**  
+- Validate **KMS key rotation**.  
+- Verify **Secrets Manager rotation** is enabled.  
+- Check if **SSM Parameters** are using `SecureString`.
+
+🔍 **CloudTrail**  
+- Ensure CloudTrail logs are **encrypted with KMS**.
+
+⚠️ **Lambda Analysis**  
+- Review **Lambda environment variables** for sensitive data *(manual review required)*.
+
+🔥 **Security Groups**  
+- Flag **open ingress/egress** rules allowing traffic from/to `0.0.0.0/0` or `::/0`.  
+- Detect **unused security groups** not attached to any instance or interface.
+
+🌐 **Load Balancer Check**  
+- Identify **cleartext communication** allowed by load balancers.
 
 ---
 
 ## 🛠 Prerequisites
-
-Make sure the following tools are installed:
+- AWS CLI configured with appropriate permissions.
+- `jq` and `scrot` installed:
 
 ```bash
 sudo apt install jq scrot -y
