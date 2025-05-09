@@ -1444,7 +1444,7 @@ check_single_lb() {
 }
 
 
-#check if "securestring" is being used or not in ssm and secrets manager.. if not being used, then we can report as the secrets will be in plaintext
+#check if "securestring" is being used or not in ssm and secrets manager.. if not being used, then its ok to report as the secrets will be in plaintext
 check_secrets() {
     clear
     echo "Do you want to check SecureString status for:"
@@ -1656,6 +1656,7 @@ run_pacu() {
 		echo_red "Be in a lookput for any prompts where you might have to do Y/N"
 		#mkdir -p "$HOME/.local/share/pacu/$SESSION_NAME/downloads/ssm_parameters"
 		###uncomment the above line if Pacu gives an error like: FileNotFoundError: [Errno 2] No such file or directory: '/home/kali/.local/share/pacu/default-session/downloads/ssm_parameters/ap-southeast-1.txt'
+                #change your path if required.
         pacu --module-name "$MODULE" --set-regions "$REGION" --exec --session "$SESSION_NAME"
     done
 
