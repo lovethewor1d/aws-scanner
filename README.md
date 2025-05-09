@@ -1,4 +1,4 @@
-# 🛡️ AWS Security Audit Toolkit (`aws-v7.sh`)
+# 🛡️ AWS Security Audit Toolkit (`aws-v8.sh`)
 
 A comprehensive and interactive Bash script to perform AWS security posture assessments. Designed to help security engineers and cloud practitioners identify misconfigurations.
 
@@ -40,6 +40,14 @@ Use specific AWS CLI profiles with `--profile`.
 🌐 **Load Balancer Check**  
 - Identify **cleartext communication** allowed by load balancers.
 
+🧰 **Tooling Integration**  
+- 🔗 **AWS Console Federation URL Generator**: Quickly generate AWS console login URLs using credentials or AWS profile.  
+- 🧪 **Pacu Module Execution**: Automatically run a suite of Pacu enumeration and privilege escalation modules.  
+- 🧠 **Third-party Audit Tools** (must be installed separately):  
+  - **ScoutSuite**  
+  - **Prowler**  
+  - **CloudFox**  
+  - **CloudSplaining**
 ---
 
 ## 🛠 Prerequisites
@@ -52,6 +60,12 @@ sudo apt install jq scrot -y
 
 - AWS CLI v2 must be installed and configured with valid credentials.
 
+- For extended auditing, ensure the following tools are installed and in your PATH:
+  - pacu
+  - scoutsuite
+  - prowler
+  - cloudfox
+  - cloudsplaining
 ---
 
 ## 🚀 Usage
@@ -64,13 +78,13 @@ chmod +x aws-v7.sh
 ### Example:
 
 ```bash
-./aws-v7.sh --profile dev-account --imdsv2 --s3-security
+./aws-v8.sh --profile dev-account --imdsv2 --s3-security
 ```
 
 ### Help Menu:
 
 ```bash
-./aws-v7.sh --help
+./aws-v8.sh --help
 ```
 
 This will list all available options and examples.
