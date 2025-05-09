@@ -71,8 +71,8 @@ sudo apt install jq scrot -y
 ## 🚀 Usage
 
 ```bash
-chmod +x aws-v7.sh
-./aws-v7.sh --profile <yourProfileName> [options]
+chmod +x aws-v8.sh
+./aws-v8.sh --profile <yourProfileName> [options]
 ```
 
 ### Example:
