@@ -40,6 +40,10 @@ Use specific AWS CLI profiles with `--profile`.
 🌐 **Load Balancer Check**  
 - Identify **cleartext communication** allowed by load balancers.
 
+💾 **EBS Volume & Snapshot Encryption**  
+- Check if **EBS volumes** are **encrypted**.  
+- Ensure that **EBS snapshots** are **encrypted**.
+  
 🧰 **Tooling Integration**  
 - 🔗 **AWS Console Federation URL Generator**: Quickly generate AWS console login URLs using credentials or AWS profile.  
 - 🧪 **Pacu Module Execution**: Automatically run a suite of Pacu enumeration and privilege escalation modules.  
@@ -53,11 +57,14 @@ Use specific AWS CLI profiles with `--profile`.
 ## 🛠 Prerequisites
 - AWS CLI configured with appropriate permissions.
 - `jq` and `scrot` installed:
-
 ```bash
 sudo apt install jq scrot -y
 ```
-
+- **Windows to Linux Compatibility**
+If the script was copied from a Windows system, Linux may raise a bad interpreter error due to CRLF line endings.
+```bash
+dos2unix aws-v8.sh
+```
 - AWS CLI v2 must be installed and configured with valid credentials.
 
 - For extended auditing, ensure the following tools are installed and in your PATH:
