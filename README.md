@@ -60,8 +60,7 @@ Use specific AWS CLI profiles with `--profile`.
 ```bash
 sudo apt install jq scrot -y
 ```
-- **Windows to Linux Compatibility**
-If the script was copied from a Windows system, Linux may raise a bad interpreter error due to CRLF line endings.
+- If the script was copied from Windows to Linux may raise a bad interpreter error due to CRLF line endings.
 ```bash
 dos2unix aws-v8.sh
 ```
