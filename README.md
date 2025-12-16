@@ -1,4 +1,4 @@
-# 🛡️ AWS Security Audit Toolkit (`aws-v8.sh`)
+# 🛡️ AWS Security Audit Toolkit (`aws-v9.sh`)
 
 A comprehensive and interactive Bash script to perform AWS security posture assessments. Designed to help security engineers and cloud practitioners identify misconfigurations.
 
