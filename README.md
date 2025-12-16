@@ -60,7 +60,7 @@ Use specific AWS CLI profiles with `--profile`.
 ```bash
 sudo apt install jq scrot -y
 ```
-- If the script was copied from Windows to Linux, it may raise a bad interpreter error due to CRLF line endings.
+- If the script was copied from Windows to Linux, it may raise a bad interpreter error due to CRLF line endings. Please use the following command to fix that:
 ```bash
 dos2unix aws-v8.sh
 ```
@@ -77,20 +77,20 @@ dos2unix aws-v8.sh
 ## 🚀 Usage
 
 ```bash
-chmod +x aws-v8.sh
-./aws-v8.sh --profile <yourProfileName> [options]
+chmod +x aws-v9.sh
+./aws-v9.sh --profile <yourProfileName> [options]
 ```
 
 ### Example:
 
 ```bash
-./aws-v8.sh --profile dev-account --imdsv2 --s3-security
+./aws-v9.sh --profile dev-account --imdsv2 --s3-security
 ```
 
 ### Help Menu:
 
 ```bash
-./aws-v8.sh --help
+./aws-v9.sh --help
 ```
 
 This will list all available options and examples.
